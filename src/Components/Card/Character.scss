@@ -1,0 +1,30 @@
+.o-character {
+  --WhiteColor: #fff;
+  width: 20rem;
+  border: 1px solid var(--WhiteColor);
+  background-color: var(--WhiteColor);
+  margin-bottom: 1rem;
+
+  .o-character-img {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+
+    :hover {
+      filter: brightness(100%);
+    }
+  }
+
+  .o-character-name {
+    text-align: center;
+    h3{
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+  }
+}

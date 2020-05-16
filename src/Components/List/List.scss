@@ -1,0 +1,49 @@
+.o-count{
+    position: absolute;
+    top: 8.5rem;
+    left: 5.1rem;
+    h4{
+        color: #fff
+    }
+}
+
+.o-list-container{
+    --WhiteColor:#fff;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+
+    .o-search{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+
+       form input[type="text"]{
+            width: 40%;
+            height: 30px;
+            outline: none;
+            padding: 0 1rem;
+            font-size: 1rem;
+            background: none;
+            border: none;
+            border-bottom: 1px solid var(--WhiteColor);
+            color: #fff;
+
+        }
+        .o-error{
+            position: absolute;
+            top: 20%;
+            left: 44%;
+            color: #fff;
+        }
+    }
+
+    .o-list-ch{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+
