@@ -3,11 +3,10 @@ import {MD5} from "../../md5";
 import Character from "../Character/Character";
 import "./List.scss";
 
-
 const endPoint =
-  "http://gateway.marvel.com/v1/public/characters?";
+  "http://gateway.marvel.com/v1/public/series?";
 const endPoint2 =
-  "http://gateway.marvel.com/v1/public/characters?nameStartsWith";
+  "http://gateway.marvel.com/v1/public/comics?titleStartsWith";
   
 let ts = Date.now();
 const publicKey = "3dcc2e8fe3ef2af292dadf089641bff0";
@@ -15,7 +14,7 @@ const privateKey = "8f1162447366680c421192c5b4b02f8895a75b36";
 const convert = ts + privateKey + publicKey;
 let hash = MD5(convert);
 
-class List extends Component {
+class ListSeries extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,8 +40,8 @@ class List extends Component {
   handleSubmit(e) {
     let {searchCharacter} = this.state;
     e.preventDefault();
-    if(!searchCharacter){
-      return this.setState({error:"Please write something..."})
+    if(!this.state.searchCharacter){
+      return this.setState({error:"Por favor escribe un texto válido"})
     }
     fetch(
       `${endPoint2}=${searchCharacter}&ts=${ts}&apikey=${publicKey}&hash=${hash}`
@@ -51,7 +50,7 @@ class List extends Component {
       })
       .then((myJson) => {
         if(myJson.data.results == 0){
-          return this.setState({error:"There's not results",data:[], count:null})
+          return this.setState({error:"No se encontraron resultados",data:[], count:null})
         }
         else{          
           this.setState({
@@ -67,21 +66,20 @@ class List extends Component {
 
   render() {
     let {data, searchCharacter,count} = this.state;
+
     return (
       <Fragment>
       {count ?
         <div className="o-count">
-      <h4>Results found: {count} </h4>
+      <h4>Resultados encontrados: {count} </h4>
       </div>:null}
+      
         <div className="o-list-container">
-        <div className="o-mesagge">
-        <h2>Search your favorite Marvel Character</h2>
-        </div>
           <div className="o-search">
             <form onSubmit={(e) => this.handleSubmit(e)}>
               <input
                 type="text"
-                placeholder="Search character"
+                placeholder="Search serie"
                 onChange={(e) =>
                   this.setState({searchCharacter: e.target.value})
                 }
@@ -99,13 +97,10 @@ class List extends Component {
               <Character character={character} key={character.id} />
             ))}
           </div>
-          
         </div>
-
-        
       </Fragment>
     );
   }
 }
 
-export default List;
+export default ListSeries;

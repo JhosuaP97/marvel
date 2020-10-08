@@ -9,44 +9,24 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(19, 19, 19);
-  font-family: "Roboto", sans-serif;
+  background: url("http://cdn30.us1.fansshare.com/image/moviewallpapers/best-marvel-movie-ironman-wallpaper-hd-1491050490.jpg") no-repeat fixed;
+  font-family: "BEBAS", sans-serif;
+  overflow-x: hidden;
 }
 
-.o-container {
-  nav {
-    background-color: rgb(216, 38, 19);
-    width: 100%;
-    height: 3rem;
-
-    .o-logo {
-      color: #fff;
-      font-size: 40px;
-      padding: 0 4.8rem;
-    }
-
-    ul {
-      float: right;
-      margin: 0 20px;
-
-      li {
-        display: inline-block;
-        line-height: 3rem;
-        margin: 0 2rem;
-      }
-
-      a {
-        padding: 0 30px;
-        color: #fff;
-        font-size: 1rem;
-        text-transform: uppercase;
-      }
-      a.o-active,a:hover {
-        
-        background-color: #fff;
-        color: rgb(216, 38, 19);
-        transition: .2s;
-      }
-    }
-  }
+::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: #000;
 }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgb(237, 29, 36);
+  -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-track{
+  border-radius: 10px;
+  background-color: white;
+}
+

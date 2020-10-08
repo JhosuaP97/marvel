@@ -1,28 +1,21 @@
 import React from "react";
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import "./App.scss";
+import Navigation from "./Components/Navigation/Navigation";
 import List from "./Components/List/List";
+import ListComic from "./Components/List/ListComic";
+import ListSeries from "./Components/List/ListSeries";
+
+
 
 const App = () => {
   return (
-    <div className="o-container">
-      <nav>
-        <label className="o-logo">Marvel</label>
-        <ul>
-          <li>
-            <a href="#" className="o-active">
-              Personajes
-            </a>
-          </li>
-          <li>
-            <a href="#">Comics</a>
-          </li>
-          <li>
-            <a href="#">Series</a>
-          </li>
-        </ul>
-      </nav>
-      <List />
-    </div>
+    <Router>
+    <Navigation/>
+     <Route path="/" exact component={List}/>
+     {/* <Route path="/ListComic" component={ListComic}/>
+     <Route path="/ListSeries" component={ListSeries}/> */}
+    </Router>
   );
 };
 

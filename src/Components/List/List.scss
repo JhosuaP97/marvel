@@ -1,49 +1,80 @@
-.o-count{
-    position: absolute;
-    top: 8.5rem;
-    left: 5.1rem;
-    h4{
-        color: #fff
-    }
+.o-count {
+  position: absolute;
+  top: 8.5rem;
+  left: 5.1rem;
+  h4 {
+    color: #fff;
+    font-family: 'BEBAS',sans-serif;
+  }
 }
 
-.o-list-container{
-    --WhiteColor:#fff;
+.o-list-container {
+  --WhiteColor: #fff;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+
+  .o-mesagge {
+    width: 50%;
+    margin: auto;
+    background:rgba(0,0,0,.9);
+    h2 {
+      color: var(--WhiteColor);
+      font-family: "BEBAS", sans-serif;
+      text-align: center;
+      margin: 1rem 0;
+      word-spacing: 0.1rem;
+    }
+  }
+
+  .o-search {
     width: 100%;
-    max-width: 1200px;
-    margin: 2rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
 
-    .o-search{
-        width: 100%;
-        text-align: center;
-        margin-bottom: 3rem;
-
-       form input[type="text"]{
-            width: 40%;
-            height: 30px;
-            outline: none;
-            padding: 0 1rem;
-            font-size: 1rem;
-            background: none;
-            border: none;
-            border-bottom: 1px solid var(--WhiteColor);
-            color: #fff;
-
-        }
-        .o-error{
-            position: absolute;
-            top: 20%;
-            left: 44%;
-            color: #fff;
-        }
+    form input[type="text"] {
+      width: 40%;
+      height: 30px;
+      outline: none;
+      padding: 0 1rem;
+      font-size: 1rem;
+      background: none;
+      border: 2px solid;
+      border-radius: 8px;
+      color: #fff;
     }
-
-    .o-list-ch{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    .o-error {
+      position: absolute;
+      top: 12.5rem;
+      left: 44%;
+      color: #fff;
     }
+  }
+
+  .o-list-ch {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
+@media screen and (max-width: 768px) {
 
+    body{
+        width: 100%;
+        background-color: rgba(0,0,0,.9);
+    }
+  .o-list-container {
+    margin: 4rem;
+
+    .o-search {
+      margin: 4rem -2rem;
+
+      form input[type="text"] {
+        width: 70%;
+        margin: 0.4rem 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.o-character {
+  --WhiteColor: #fff;
+  width: 20rem;
+  margin-bottom: 1rem;
+  transition: all ease-in-out 0.3s;
+
+  .o-character-img {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      filter: brightness(70%);
+      clip-path: polygon(
+        30% 0%,
+        70% 0%,
+        100% 30%,
+        100% 70%,
+        70% 100%,
+        30% 100%,
+        0% 70%,
+        0% 30%
+      );
+      transition: 0.3s;
+    }
+
+    :hover {
+      filter: brightness(100%);
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+  }
+
+  .o-character-name {
+    position: relative;
+    top: -1rem;
+    text-align: center;
+    background-color: var(--WhiteColor);
+    h3 {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+  }
+
+  .o-button {
+    position: relative;
+    top: -0.8rem;
+    background: none;
+    color: var(--WhiteColor);
+    outline: none;
+    font-size: 1.2rem;
+    font-family: "BEBAS", sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid red;
+
+    &:hover {
+      background-color: red;
+      color: var(--WhiteColor);
+      outline: none;
+    }
+  }
+}
