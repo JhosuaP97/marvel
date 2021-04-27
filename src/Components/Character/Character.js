@@ -19,8 +19,6 @@ class Character extends Component {
   render() {
     let { on } = this.state;
     let { character } = this.props;
-
-    console.log("character", character);
     return (
       <div className="o-character">
         <div className="o-character-img">
