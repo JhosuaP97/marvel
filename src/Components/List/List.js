@@ -3,9 +3,9 @@ import { MD5 } from "../../md5";
 import Character from "../Character/Character";
 import "./List.scss";
 
-const endPoint = "http://gateway.marvel.com/v1/public/characters?";
+const endPoint = "https://gateway.marvel.com/v1/public/characters?";
 const endPoint2 =
-  "http://gateway.marvel.com/v1/public/characters?nameStartsWith";
+  "https://gateway.marvel.com/v1/public/characters?nameStartsWith";
 
 let ts = Date.now();
 const publicKey = "3dcc2e8fe3ef2af292dadf089641bff0";
