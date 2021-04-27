@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./Character.scss";
 /* import Modal from "react-modal"; */
-import {Button, Modal} from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 class Character extends Component {
   constructor() {
     super();
@@ -17,8 +17,10 @@ class Character extends Component {
   };
 
   render() {
-    let {on} = this.state;
-    let {character} = this.props;
+    let { on } = this.state;
+    let { character } = this.props;
+
+    console.log("character", character);
     return (
       <div className="o-character">
         <div className="o-character-img">
@@ -38,10 +40,7 @@ class Character extends Component {
         >
           Comics
         </Button>
-        <Modal show={on} 
-               onHide={this.handleToggle} 
-               centered size="lg"
-               >
+        <Modal show={on} onHide={this.handleToggle} centered size="lg">
           <Modal.Header closeButton>
             Comics where this character appears
           </Modal.Header>
@@ -49,7 +48,7 @@ class Character extends Component {
             <ul>
               {character.comics.items.map((comic) => (
                 <li key={this.props.character.id}>
-                <a href={comic.resourceURI}>{comic.name}</a>                  
+                  <a href={comic.resourceURI}>{comic.name}</a>
                 </li>
               ))}
             </ul>
